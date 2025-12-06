@@ -140,7 +140,8 @@ bool initTextureRenderer() {
         uniform sampler2D uTexture;
         
         void main() {
-            FragColor = texture(uTexture, TexCoord);
+            vec4 texColor = texture(uTexture, TexCoord);
+            FragColor = vec4(texColor.rgb, texColor.a * 0.5);
         }
     )";
     
